@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>net.osgg</groupId>
+  <artifactId>ejbrest</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
+    <failOnMissingWebXml>false</failOnMissingWebXml>
+     <version.server.bom>24.0.0.Final</version.server.bom>
+  </properties>
+  
+    <dependencyManagement>
+    <dependencies>
+    	<dependency>
+    		<groupId>org.wildfly.bom</groupId>
+    		<artifactId>wildfly-jakartaee8-with-tools</artifactId>
+    		<version>24.0.0.Final</version>
+    		<type>pom</type>
+    		<scope>import</scope>
+    	</dependency>   	
+    </dependencies>
+  </dependencyManagement>  
+  
+  
+  <dependencies>
+    <dependency>
+      <groupId>jakarta.platform</groupId>
+      <artifactId>jakarta.jakartaee-web-api</artifactId>
+      <version>8.0.0</version>
+      <scope>provided</scope>
+    </dependency>
+    
+    <dependency>
+    	<groupId>org.jboss.spec.javax.ejb</groupId>
+    	<artifactId>jboss-ejb-api_3.2_spec</artifactId>
+    	<scope>provided</scope>
+    </dependency> 
+    
+    <dependency>
+      <groupId>jakarta.enterprise</groupId>
+      <artifactId>jakarta.enterprise.cdi-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    
+    <dependency>
+         <groupId>org.jboss.spec.javax.annotation</groupId>
+         <artifactId>jboss-annotations-api_1.3_spec</artifactId>
+         <scope>provided</scope>
+    </dependency>
+    <!-- dependency>
+      <groupId>org.eclipse.microprofile</groupId>
+      <artifactId>microprofile</artifactId>
+      <version>3.2</version>
+      <type>pom</type>
+      <scope>provided</scope>
+    </dependency -->
+  </dependencies>
+  <build>
+    <finalName>ejbrest</finalName>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+      </plugin>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.2.3</version>
+      </plugin>
+    </plugins>
+  </build>
+</project>
