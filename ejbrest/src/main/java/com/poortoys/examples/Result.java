@@ -12,7 +12,7 @@ public class Result {
 		return conv;
 	}
 	
-	public void setMsg(String conv) {
+	public void setConv(String conv) {
 		this.conv = conv;
 	}
 	
